@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+	<title>Profile page</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href='http://fonts.googleapis.com/css?family=Chela+One' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="container">
+	<header>
+		<h1>Profile generator</h1>
+	</header>
+	<div class="input">
+		<div class="input-header">
+			<span class="step">Step 1:</span> <br>
+			<span>Add your information</span>
+			<hr>
+		</div>
+		<div class="input-items">
+		<ul>
+			<li>Name (<i>First and last)</i></li>
+			<input class="name" >
+			<li>Age</li>
+			<li>
+			<input class="age">Profession</li>
+			<input class="job">
+			<li>Favorite movie</li><input class="movie">
+			<li>Hobbies</li><input class="hobbies">
+			<li>Email address</li><input class="email">
+		</ul>
+		</div> <!-- end ordered list -->
+		<a href="#"><div class="active button">Submit
+		</div></a> <!-- end button -->
+	</div> <!-- end .input div --> 
+	<div class="preview">
+		<div class="preview-header">
+			<span class="step">Step 2:</span><br>
+			<span>Preview your profile</span>
+			<hr>
+		</div>
+		<div class="preview-info">
+			<div class="preview-name"></div>
+			<div class="preview-body">
+			<div class="preview-age"></div>
+			<div class="preview-job"></div>
+			<div class="preview-movie"></div>
+			<div class="preview-hobbies"></div>
+			<div class="preview-email"></div>
+			</div>
+		</div>
+	</div><!-- end .preview div -->
+
+	
+
+</div> <!-- end .container div -->
+	
+<script src="jquery-2.0.3.min.js"></script>
+<script src="function.js"></script>
+</body>
+</html>

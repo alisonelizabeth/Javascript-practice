@@ -1,0 +1,210 @@
+/* general stuff */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Futura, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: rgba(255, 55, 19, 0.7);
+}
+ 
+* {
+  vertical-align: top;
+}
+ 
+/* typography */
+ 
+h1 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+ 
+.container {
+  margin: 0 auto;
+  width: 940px;
+  background: white;
+}
+
+header {
+  height: 174px;
+  background: url('profiles.png')repeat ;
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-family: 'Chela One', Helvetica, sans-serif;
+  margin: 0;
+  font-size: 50px;
+  color: rgb(255, 55, 19);
+  padding: 48px 0px;
+  text-shadow: 2px 1px 5px #3a3535;
+}
+
+
+/* input styles */
+
+.input {
+  font-family: 'Abel', Helvetica, sans-serif;
+  font-weight: bold;
+  width: 300px;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.input hr {
+  text-align: center;
+  width: 120px;
+}
+
+
+input {
+  font-family: 'Abel', Helvetica, sans-serif;
+  font-size: 16px;
+  padding-left: 5px;
+  width: 250px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.step {
+  font-weight: bold;
+}
+
+.input-header {
+  font-family: 'Abel', Helvetica, sans-serif;
+  font-size: 25px;
+  text-align: center;
+  padding: 5px 0px;
+  font-weight: normal;
+}
+
+.preview-header {
+  font-size: 25px;
+  text-align: center;
+  padding: 5px 0px; 
+  font-family: 'Abel', Helvetica, sans-serif;
+}
+
+.preview-header hr {
+  text-align: center;
+  width: 120px;
+}
+
+
+input.name {
+  height: 30px;
+}
+
+input.age {
+  height: 30px;
+}
+
+input.job {
+  height: 30px;
+}
+
+input.movie {
+  height: 30px;
+}
+
+input.hobbies {
+  padding-bottom: 100px;
+  padding-top: 5px;
+}
+
+input.email {
+  height: 30px;
+}
+
+/* preview styles */
+
+.preview {
+  width: 600px;
+  display: inline-block;
+  font-size: 25px;
+  text-align: center;
+}
+
+.preview-info {
+  padding: 0px 25px;
+}
+
+.preview-name {
+  font-family: 'Chela One', Helvetica, sans-serif;
+  background: url('dimension.png') repeat;
+  text-align: center;
+  font-size: 50px;
+  text-shadow: 1px 1px 3px black;
+}
+
+.preview-body {
+  background: #ECECEC;
+  padding-top: 15px;
+  height: 560px;
+}
+
+.preview-age {
+  font-family: font-family: 'Abel', Helvetica, sans-serif;;
+  font-size: 20px;
+  display: inline-block;
+}
+
+.preview-job {
+  font-family: font-family: 'Abel', Helvetica, sans-serif;;
+  font-size: 20px; 
+  display: inline-block;
+}
+
+.preview-movie {
+  font-family: font-family: 'Abel', Helvetica, sans-serif;;
+  font-size: 20px; 
+  display: inline-block;
+}
+
+.preview-hobbies {
+  font-family: font-family: 'Abel', Helvetica, sans-serif;;
+  font-size: 20px; 
+  display: inline-block;
+}
+
+.preview-email {
+  font-family: font-family: 'Abel', Helvetica, sans-serif;;
+  font-size: 20px; 
+  display: inline-block;
+}
+/* button */
+.button {
+  font-family: 'Chela One', Helvetica, sans-serif;
+  color: white;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+  box-shadow: inset 0px 2px 3px 0px white;
+  margin-left: 40px; 
+  text-shadow: 1px 1px 5px grey;
+  width: 200px;
+  padding: 10px 20px;
+  font-size: 25px;
+  background: rgb(255, 55, 19);
+  border: 1px #FF4B4B solid;
+  -webkit-transition: all 1s ease;
+}
+
+.button.active {
+  position: relative;
+}
+
+.button.active:active {
+  top: 1px;
+  background: rgba(255, 55, 19, 0.7);
+  box-shadow: inset 0px 2px 5px #ff5000;
+  -webkit-transition: all .3s ease;
+}
