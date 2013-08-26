@@ -1,25 +1,75 @@
-$(document).ready(function() {	
+$(document).ready
+(
+	function() 
+	{		
+		$('.button').click
+		(
+			function()
+			{
+				if (validateForm())
+				{
+					var nameValue = $('.name').val();
+					var ageValue = $('.age').val();
+					var jobValue = $('.job').val();
+					var movieValue = $('.movie').val();
+					var hobbiesValue = $('.hobbies').val();
+					var emailValue = $('.email').val();
 
-$('.button').click(function(){
-	var nameValue = $('.name').val();
-	$('.preview-name').text(nameValue);
+					$('.preview-name').text(nameValue);	
+					$('.preview-age').text('Want to know more about me? Well, I am ' + ageValue + ' years old.');
+					$('.preview-job').text('I work as a ' + jobValue + '.');
+					$('.preview-movie').text('If I had to pick a favorite movie it would be ' + movieValue + '.');
+					$('.preview-hobbies').text('Here are a few of my hobbies: ' + hobbiesValue + '.');
+					$('.preview-email').text('You can reach me at ' + emailValue + '.');
+				}
+			}
+		)
 
-	var ageValue = $('.age').val();
-	$('.preview-age').text('Want to know more about me? Well, I am ' + ageValue + ' years old.');
+	
+			
+		$('.click-modal').click
+		(
+			function () 
+			{
+				console.log('modal ok')
+				$('.modal').addClass('modal-active');
+			}
+		)	
 
-	var jobValue = $('.job').val();
-	$('.preview-job').text('I work as a ' + jobValue + '.');
-
-	var movieValue = $('.movie').val();
-	$('.preview-movie').text('If I had to pick a favorite movie it would be ' + movieValue + '.');
-
-	var hobbiesValue = $('.hobbies').val();
-	$('.preview-hobbies').text('Here are a few of my hobbies: ' + hobbiesValue + '.');
-
-	var emailValue = $('.email').val();
-	$('.preview-email').text('You can reach me at ' + emailValue + '.');
+		$('.button-two').click 
+		(
+			function()
+			{
+				console.log('modal box closed')
+				$('.modal').removeClass('modal-active');
+			}
+							)
 
 })
 
-})
+		function validateForm ()
+		{
+			var errormessage="ok"																	
+			$('.message').removeClass('popup-message')
+			$('input').removeClass("warning")
+			$('input').each
+			(
+				function()
+				{
+					if ($(this).val() == "") 
+					{
+						console.log("input left empty");
+						errormessage="not ok"
+						$(this).addClass("warning")
+						$('.message').addClass('popup-message')
+					}
+				}
+			)
+			return errormessage
+		}
 
+
+	
+
+
+	
