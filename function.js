@@ -1,7 +1,7 @@
 var usersCollection = []
 
 $(document).ready (function(){
-	$('.click-modal').click(function() {
+	$('span.click-here').click(function() {
 				console.log('modal ok')
 				$('.modal').addClass('modal-active');
 			})	//end of modal click
@@ -9,53 +9,25 @@ $(document).ready (function(){
 	$('.button-two').click(function() {
 				console.log('modal box closed')
 				$('.modal').removeClass('modal-active');
-			})  //end of button two 
-	// $('.test').click(function() {
-	// 		usersCollection.push(getProfileDetails());
-	// 	})
+			})  
+
 	$('.button').click(function(){
 		if (validateForm()) {
-		usersCollection.push(getFormValues());
-		updateUserList(usersCollection);
+			getProfileInfo();
+			usersCollection.push(getFormValues());
+			updateUserList(usersCollection);
 		}
-
 	}) //end of button click function 
 
-} )  //end of document ready
+})  //end of document ready
 
-
-
-
-// function getProfileDetails () {
-// 	var person = $('.age' + '.job').val();
-
-// 	infoData = {
-// 		person: person,
-// 	}
-
-// 	return person 
-// }
-
-
-
-
-function getFormValues () {
+function getProfileInfo () {
 	var nameVal 	= $('.name').val();
 	var ageVal 		= $('.age').val();
 	var jobVal 		= $('.job').val();
 	var movieVal 	= $('.movie').val();
 	var hobbiesVal 	= $('.hobbies').val();
 	var emailVal 	= $('.email').val()
-	
-
-	formData = {
-		name: nameVal,
-		age: ageVal,
-		job: jobVal,
-		movie: movieVal,
-		hobbies: hobbiesVal,
-		email: emailVal
-	};
 
 	$('.preview-name').text(nameVal);	
 	$('.preview-age').text('Want to know more about me? Well, I am ' + ageVal + ' years old.');
@@ -63,6 +35,18 @@ function getFormValues () {
 	$('.preview-movie').text('If I had to pick a favorite movie it would be ' + movieVal + '.');
 	$('.preview-hobbies').text('Here are a few of my hobbies: ' + hobbiesVal + '.');
 	$('.preview-email').text('You can reach me at ' + emailVal + '.');
+
+}
+
+function getFormValues () {
+	var name 	= $('.name').val();
+	var email 	= $('.email').val();
+	
+
+	formData = {
+		name: name,
+		email: email
+	};
 
 	return formData // returns an object
 	//if you return something, can store it
@@ -83,17 +67,19 @@ function updateUserList (list) {
 
 
 function validateForm () {
-			var errormessage="ok"																	
+			var valid = true;
 			$('.message').removeClass('popup-message')
 			$('input').removeClass("warning")
 			$('input').each(function(){
-					if ($(this).val() == "") {
-						console.log("input left empty");
-						errormessage="not ok"
-						$(this).addClass("warning")
-						$('.message').addClass('popup-message')
-					}
-				})
-			return errormessage
+				if ($(this).val() == "") {
+					console.log("input left empty");
+					valid = false
+					$(this).addClass("warning")
+					$('.message').addClass('popup-message')
+				}
+			})
+
+
+			 return valid
 		}
  
