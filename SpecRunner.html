@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Jasmine Spec Runner</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-1.3.1/jasmine_favicon.png">
+  <link rel="stylesheet" type="text/css" href="lib/jasmine-1.3.1/jasmine.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+  <script type="text/javascript" src="lib/jasmine-1.3.1/jasmine.js"></script>
+  <script type="text/javascript" src="lib/jasmine-1.3.1/jasmine-html.js"></script>
+
+  <!-- include source files here... -->
+  <script src="jquery-2.0.3.min.js"></script>
+  <script src="function.js"></script>
+
+  <!-- include spec files here... -->
+  <script src="spec/script-spec.js"></script>
+
+  <script type="text/javascript">
+    (function() {
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var htmlReporter = new jasmine.HtmlReporter();
+
+      jasmineEnv.addReporter(htmlReporter);
+
+      jasmineEnv.specFilter = function(spec) {
+        return htmlReporter.specFilter(spec);
+      };
+
+      var currentWindowOnload = window.onload;
+
+      window.onload = function() {
+        if (currentWindowOnload) {
+          currentWindowOnload();
+        }
+        execJasmine();
+      };
+
+      function execJasmine() {
+        jasmineEnv.execute();
+      }
+
+    })();
+  </script>
+
+</head>
+
+<body>
+
+<div class="modal">
+  <div class="modal-box">
+    <h2>Thanks for visiting</h2>
+    <p>It appears the Profile Generator is experiencing problems. To report the issue, send an email to <a href="mailto:alisonmllr20@gmail.com">alisonmllr20@gmail.com</a>.</p>
+    <div class="button-two active">Close</div>
+  </div>
+</div>
+<div class="container">
+  <header>
+    <h1>Profile generator</h1>
+  </header>
+  <div class="message"></div>
+  <div class="input">
+    <div class="input-header">
+      <span class="step">Step 1:</span> <br>
+      <span>Add your information</span>
+      <hr>
+    </div>
+    <div class="input-items">
+    <ul>
+      <li>Name</li>
+      <input class="name" placeholder="Name">
+      <li>Age</li>
+      <input class="age" placeholder="Age">
+      <li>Profession</li>
+      <input class="job" placeholder="Profession">
+      <li>Favorite movie</li><input class="movie" placeholder="Favorite movie">
+      <li>Hobbies</li><input class="hobbies" placeholder="Hobbies">
+      <li>Email address</li><input class="email" placeholder="Email address">
+    </ul>
+    </div> <!-- end input-items -->
+    <a href="#"><div class="button">Submit
+    </div></a> <!-- end button -->
+    <div class="click-modal"><p> Having problems with the Profile Generator? <span class="click-here">Click here.</p></span></div> <!-- modal click function -->
+  </div> <!-- end input -->
+
+  
+  <div class="preview">
+    <div class="preview-header">
+      <span class="step">Step 2:</span><br>
+      <span>Preview your profile</span>
+      <hr>
+    </div>
+    <!-- <div class="preview-info"> -->
+      <div class="preview-name"></div>
+      <div class="preview-body">
+        <div class="preview-age"></div>
+        <div class="preview-job"></div>
+        <div class="preview-movie"></div>
+        <div class="preview-hobbies"></div>
+        <div class="preview-email">
+        </div>
+      </div>
+    <!-- </div> -->
+    <div class="users-list">
+    <span class="step">Step 3:</span> <br>
+      <span>Congrats! Your profile has been added to our system. <br> Check out who else is using the Profile Generator.</span>
+      <hr>
+    <ol class="list">
+
+    </ol>
+  </div>
+  </div><!-- end .preview div -->
+
+  
+
+</div> <!-- end .container div -->
+
+ 
+
+</body>
+</html>
