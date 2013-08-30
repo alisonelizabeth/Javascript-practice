@@ -1,5 +1,5 @@
 describe("usersCollection", function(){
-	it ("warning if usersCollection variable is 'undefined'", function () {
+	it ("should return a warning message if the usersCollection variable is 'undefined'", function () {
 		var usersCollection = []
 		expect(usersCollection).toBeDefined();
 
@@ -7,30 +7,30 @@ describe("usersCollection", function(){
 	})
 
 describe("modal box", function (){ 
-	it ("model box should open after the class 'span.click-here' is clicked", function () {
+	it ("should open after the class 'span.click-here' is clicked", function () {
 		$("span.click-here").click()
-		expect($(".modal").addClass("modal-active"));
+		expect($(".modal").hasClass("modal-active")).toBe(true);
 		});
 
-	it ("modal box should close when the class '.button-two'is clicked", function () {
+	it ("should close when the class '.button-two'is clicked", function () {
 		$(".button-two").click()
-	expect ($(".modal").removeClass("modal-active"));
+		expect ($(".modal").hasClass("modal-active")).toBe(false);
 		});
 	})
 
-describe("validateForm", function () {
+describe("validateForm when false", function () {
 	beforeEach(function() {
 		$('input').val('');
 	})
 
 	it ("should highlight input fields that are left blank", function () {
 		$(".button").click()
-		expect($("input").addClass("warning"));
+		expect($("input").hasClass("warning")).toBe(true);
 	})
 
 	it ("should insert warning message when fields are left blank", function () {
 		$(".button").click()
-		expect($(".message").addClass("popup-message"));
+		expect($(".message").hasClass("popup-message")).toBe(true);
 	})
 
 	it ("should return false if inputs are empty", function() {
@@ -38,7 +38,18 @@ describe("validateForm", function () {
 		expect(validateForm()).toBe(false);
 		});
 
-}) //end of validateForm tests 
+}) //end of validateForm tests when false
+
+describe("validateForm when true", function () {
+	beforeEach(function() {
+		$('input').val('test');
+	})
+
+	it ("should return true if inputs are filled", function (){
+		$(".button").click();
+		expect(validateForm()).toBe(true);
+		});		
+	}) // end of validateForm test when true
 
 describe("updateUserList", function (){
 	beforeEach(function() {
@@ -81,7 +92,6 @@ describe("getFormValues", function (){
 	});
 
 })//end of getFormValues
-
 
 
 

@@ -66,6 +66,7 @@ function updateUserList (list) {
 }
 
 
+
 function validateForm () {
 			var valid = true;
 			$('.message').removeClass('popup-message')
@@ -82,4 +83,5 @@ function validateForm () {
 
 			 return valid
 		}
+
  
